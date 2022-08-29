@@ -1,14 +1,90 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Page Title</title>
-</head>
-<body>
-    <img src="https://sites.google.com/a/pm.ac.th/doraemon-5-7-3/_/rsrc/1511855999998/-character/doraemon/doraemon.jpg?height=400&width=336">
-    <img src="https://sites.google.com/a/pm.ac.th/doraemon-5-7-3/_/rsrc/1511855999998/-character/doraemon/doraemon.jpg?height=400&width=336">
 
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+<body>
+    <button type="button" onclick="showProduct(products)">Click</button>
+    <p id="demo"></p>
+    <script>
+        const products = [
+            {
+                id: "01",
+                name: "veroz",
+                price: "879,000 Baht",
+                img: "img/.veroz.jpg"
+            },
+            {
+                id: '02',
+                name: "alphad",
+                price: "4,890,000 Baht",
+                img: "img/alph.jpg"
+            },
+            {
+                id: '03',
+                name: "sienta",
+                price: '599,000 Baht',
+                img: "img/sia.jpg"
+            },
+            {
+                id: '04',
+                name: "camry",
+                price: '1,799,000 Baht',
+                img: "img/cam.jpg"
+            },
+            {
+                id: '05',
+                name: "fortuner",
+                price: '1,599,000 Baht',
+                img: "img/for.jpg"
+            },
+            {
+                id: '06',
+                name: "altis",
+                price: '980,000 Baht',
+                img: "img/al.jpg"
+            },
+            {
+                id: '07',
+                name: "vios",
+                price: '689,000 Baht',
+                img: "img/vi.jpg"
+            },
+            {
+                id: '08',
+                name: "cross",
+                price: '1,199,000',
+                img: "img/cross.jpg"
+            },
+            {
+                id: '09',
+                name: "avanza",
+                price: '989,000 Baht',
+                img: "img/avanza.jpg"
+            },
+            {
+                id: '10',
+                name: "chr",
+                price: '1,790,000 Baht',
+                img: "img/chr.jpg"
+            },
+        ]
+        let text = "<ul>";
+        let x = document.getElementById("demo")
+        products.forEach(showProduct);
+        text += "</ul>";
+        x.innerHTML = text;
+
+        function showProduct(value) {
+            text += <li> ID: ${value.id} <br> Name: ${value.name} <br>Price: ${value.price} <br><img src= ${value.img}> < /li>
+            
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+
 
 </body>
+
 </html>
