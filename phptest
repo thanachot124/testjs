@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        
+<?php
+
+
+function showproductTable($id, $name, $price, $image, $red,$green,$blue){
+    echo " <tr> <td><p style = 'color:rgb($red,$green,$blue)'>$id</td> 
+    <td><p style = 'color:rgb($red,$green,$blue)'>$name</td> 
+    <td><p style = 'color:rgb($red,$green,$blue)'>$price</td> 
+    <td><img src = '$image' alt = 'Testimage'></td></tr>";
+}
+
+$arrayofproduct = array(
+    array("01", "veroz","100,000 Baht","img/veroz.jpg"),
+    array("02", "alphad","200,000 Baht","img/alph.jpg"),
+    array("03", "sienta","300,000 Baht","img/sia.jpg"),
+    array("04", "camry","400,000 Baht","img/cam.jpg"),
+    array("05", "fortuner","500,000 Baht","img/for.jpg"),
+    array("06", "altis","600,000 Baht","img/al.jpg"),
+    array("07", "vios","700,000 Baht","img/vi.jpg"),
+    array("08", "cross","800,000 Baht","img/cross.jpg"),
+    array("09", "altis","900,000 Baht","img/altis.jpg"),
+    array("10", "chr","1,000,000 Baht","img/chr.jpg")
+);
+
+    echo"<p style='font-size:50px'>Table of Products";
+    echo "<table border='1'  width='50%' height='50%' style='font-size:30px'>";
+    echo "<tr> <td>ID</td> <td>Name</td> <td>Price</td> <td>Image</td></tr>";
+    for($i=0;$i<10;$i++){
+        $red = rand(0,256);
+        $green = rand(0,256);
+        $blue = rand(0,256);      
+        showproductTable($arrayofproduct[$i][0],$arrayofproduct[$i][1],$arrayofproduct[$i][2],$arrayofproduct[$i][3],$red,$green,$blue);
+    }
+
+?>
+           
+</body>
+</html>
